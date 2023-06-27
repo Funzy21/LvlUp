@@ -1,4 +1,4 @@
-package com.amadeus.lvlup
+package com.amadeus.lvlup.feature_dashboard.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -20,9 +20,8 @@ class HomePage : ComponentActivity() {
         setContent {
             Column (
                 Modifier
-                    .width(50.dp)
-                    .height(50.dp)
-                    .background(color = Color.Blue),
+                    .fillMaxSize()
+                    .background(color = Color.Cyan),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Bottom
                     ){
@@ -30,17 +29,7 @@ class HomePage : ComponentActivity() {
                 Text("World")
             }
 
-            Row (
-                Modifier
-                    .width(50.dp)
-                    .height(50.dp)
-                    .background(color = Color.Cyan),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center
-            ){
-                Text("This is a test to distinguish rows from columns")
-                Text("The spacing is even!!!")
-            }
+
         }
     }
 }
