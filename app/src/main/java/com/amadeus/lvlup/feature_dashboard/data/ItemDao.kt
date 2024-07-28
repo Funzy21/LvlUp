@@ -7,10 +7,12 @@ import androidx.room.Entity
 import androidx.room.Update
 import androidx.room.Ignore
 import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ItemDao {
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(item: Entity){
     }
 
@@ -20,8 +22,9 @@ interface ItemDao {
     @Update
     suspend fun update(item: Entity)
 
-    @Ignore
-    suspend fun ignore(item: Entity){
-        OnConflictStrategy.IGNORE
-    }
+    @Query("SELECT * FROM items WHERE id = :id")
+    fun getItem(id: Int) : Flow<Item>
+
+    @Query("SELECT * FROM items ORDER BY name ASC")
+    fun getAllItems() : Flow<List<Item>>
 }
