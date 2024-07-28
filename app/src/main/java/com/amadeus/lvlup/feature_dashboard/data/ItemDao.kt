@@ -1,4 +1,4 @@
-package com.amadeus.lvlup.feature_dashboard.data.data_source
+package com.amadeus.lvlup.feature_dashboard.data
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -9,7 +9,7 @@ import androidx.room.Ignore
 import androidx.room.OnConflictStrategy
 
 @Dao
-interface NoteDao {
+interface ItemDao {
     @Insert
     suspend fun insert(item: Entity){
     }
