@@ -24,12 +24,8 @@ class HomePage : ComponentActivity() {
                     .background(color = Color.Cyan),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Bottom
-                    ){
-                Text("Hello")
-                Text("World")
+                ){
             }
-
-
         }
     }
 }
